@@ -238,7 +238,7 @@
       :path path
       :values (:values @state)
       :dirty (dirty (:values @state) (merge (:initial-values @state)
-                                            (:touched-values @state)))
+                                            (:initial-touched @state)))
       :reset reset}
      evt)))
 
@@ -257,7 +257,7 @@
                   (:touched @state))
         props {:path path
                :dirty (dirty values (merge (:initial-values @state)
-                                           (:touched-values @state)))
+                                           (:initial-touched @state)))
                :errors (when validation (handle-validation {:values values}
                                                            validation))
                :values values
